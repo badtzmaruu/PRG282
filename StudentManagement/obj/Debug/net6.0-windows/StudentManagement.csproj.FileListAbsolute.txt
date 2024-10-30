@@ -1,0 +1,17 @@
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\bin\Debug\net6.0-windows\StudentManagement.exe
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\bin\Debug\net6.0-windows\StudentManagement.deps.json
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\bin\Debug\net6.0-windows\StudentManagement.runtimeconfig.json
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\bin\Debug\net6.0-windows\StudentManagement.dll
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\bin\Debug\net6.0-windows\StudentManagement.pdb
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.csproj.AssemblyReference.cache
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.csproj.GenerateResource.cache
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.AssemblyInfoInputs.cache
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.AssemblyInfo.cs
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.csproj.CoreCompileInputs.cache
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.dll
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\refint\StudentManagement.dll
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.pdb
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.genruntimeconfig.cache
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\ref\StudentManagement.dll
+C:\Users\keena\Desktop\work\testing\c#\StudentManagement\StudentManagement\obj\Debug\net6.0-windows\StudentManagement.StudentManagement.resources
