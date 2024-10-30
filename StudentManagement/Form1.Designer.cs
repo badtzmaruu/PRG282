@@ -79,6 +79,7 @@
             btnAddStudent.TabIndex = 11;
             btnAddStudent.Text = "Add Student";
             btnAddStudent.UseVisualStyleBackColor = true;
+            btnAddStudent.Click += btnAddStudent_Click;
             // 
             // cmbCourse
             // 
@@ -88,6 +89,7 @@
             cmbCourse.Name = "cmbCourse";
             cmbCourse.Size = new Size(307, 23);
             cmbCourse.TabIndex = 10;
+            cmbCourse.Text = "Choose a course";
             // 
             // label4
             // 
@@ -234,6 +236,7 @@
             Controls.Add(panel1);
             Name = "StudentManagement";
             Text = "Form1";
+            Load += StudentManagement_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
