@@ -1,2 +1,2 @@
 Total Students: 0
-Average Age: 0.00
+Average Age: 0,00
