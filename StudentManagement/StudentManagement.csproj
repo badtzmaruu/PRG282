@@ -8,4 +8,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ViewingStudents.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ViewingStudents.cs" />
+  </ItemGroup>
+
 </Project>

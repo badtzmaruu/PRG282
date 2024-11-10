@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|c:\\users\\jonathan\\desktop\\github\\prg282\\studentmanagement\\viewingstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\viewingstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|c:\\users\\jonathan\\desktop\\github\\prg282\\studentmanagement\\datavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\datavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|c:\\users\\jonathan\\desktop\\github\\prg282\\studentmanagement\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|c:\\users\\jonathan\\desktop\\github\\prg282\\studentmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|c:\\users\\jonathan\\desktop\\github\\prg282\\studentmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\studentmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E8F32E09-B674-4991-998C-1808158C7BC5}|StudentManagement\\StudentManagement.csproj|solutionrelative:studentmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -26,12 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -54,7 +62,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ViewingStudents.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\ViewingStudents.cs",
+              "RelativeDocumentMoniker": "StudentManagement\\ViewingStudents.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\ViewingStudents.cs",
+              "RelativeToolTip": "StudentManagement\\ViewingStudents.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T20:29:53.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Datavalidator.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Datavalidator.cs",
+              "RelativeDocumentMoniker": "StudentManagement\\Datavalidator.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Datavalidator.cs",
+              "RelativeToolTip": "StudentManagement\\Datavalidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T20:29:41.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\DataLoader.cs",
+              "RelativeDocumentMoniker": "StudentManagement\\DataLoader.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\DataLoader.cs",
+              "RelativeToolTip": "StudentManagement\\DataLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T20:29:37.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Program.cs",
               "RelativeDocumentMoniker": "StudentManagement\\Program.cs",
@@ -62,37 +109,24 @@
               "RelativeToolTip": "StudentManagement\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T20:24:52.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T20:24:52.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs",
               "RelativeDocumentMoniker": "StudentManagement\\Form1.cs",
               "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs",
               "RelativeToolTip": "StudentManagement\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T22:33:47.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs",
-              "RelativeDocumentMoniker": "StudentManagement\\Form1.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs [Design]",
-              "RelativeToolTip": "StudentManagement\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T20:23:46.652Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "StudentManagement\\Form1.Designer.cs",
@@ -100,8 +134,22 @@
               "RelativeToolTip": "StudentManagement\\Form1.Designer.cs",
               "ViewState": "AgIAAKIAAAAAAAAAAAAswOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T22:36:56.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T22:36:56.035Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs",
+              "RelativeDocumentMoniker": "StudentManagement\\Form1.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\Form1.cs [Design]",
+              "RelativeToolTip": "StudentManagement\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T20:23:46.652Z"
             }
           ]
         }
