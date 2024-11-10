@@ -1,5 +1,5 @@
 1,John Smith,20,BIT
-2,Alice Mabuza,22,BIT
+2,Alice ,25,Course2
 3,Thabo Nkosi,19,BIT
 4,Ntombi Zulu,21,BIT
 5,Lebo Mashaba,23,BIT

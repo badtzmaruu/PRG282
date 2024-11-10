@@ -10,6 +10,8 @@ namespace StudentManagement
     public partial class StudentManagement : Form
     {
         private List<Student> studentsList = new List<Student>();
+        private bool isEditing = false; // Flag to track if in edit mode
+        private string selectedStudentID = ""; // Store the ID of the student being edited
 
         public StudentManagement()
         {
@@ -24,6 +26,8 @@ namespace StudentManagement
 
         private void LoadStudentRecords()
         {
+            dataGridView1.Rows.Clear(); // Clear existing rows to avoid duplicates
+
             if (File.Exists("students.txt"))
             {
                 // Define the columns if they aren't already defined in the designer
@@ -35,15 +39,14 @@ namespace StudentManagement
                     dataGridView1.Columns.Add("Course", "Course");
                 }
 
-                var studentRecords = File.ReadAllLines("students.txt");
+                var studentRecords = File.ReadAllLines("students.txt").Skip(1); // Skip header if present
 
-                // Iterate over the lines and add them to the DataGridView
+                // Add each student record as a row
                 foreach (var record in studentRecords)
                 {
                     var studentData = record.Split(',');
                     if (studentData.Length == 4)
                     {
-                        // Add rows to the DataGridView
                         dataGridView1.Rows.Add(studentData[0], studentData[1], studentData[2], studentData[3]);
                     }
                 }
@@ -53,7 +56,6 @@ namespace StudentManagement
                 MessageBox.Show("No student records found.");
             }
         }
-
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
@@ -125,39 +127,65 @@ namespace StudentManagement
 
         private void btnEditStudent_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (!isEditing)
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                string studentID = selectedRow.Cells[0].Value.ToString();
-                string name = selectedRow.Cells[1].Value.ToString();
-                string age = selectedRow.Cells[2].Value.ToString();
-                string course = selectedRow.Cells[3].Value.ToString();
+                // First click - load selected student's details into fields for editing
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                    selectedStudentID = selectedRow.Cells[0].Value.ToString();
+                    string name = selectedRow.Cells[1].Value.ToString();
+                    string age = selectedRow.Cells[2].Value.ToString();
+                    string course = selectedRow.Cells[3].Value.ToString();
 
-                // Open an edit form or enable input fields for editing
-                txtStudentID.Text = studentID;
-                txtName.Text = name;
-                numAge.Value = Convert.ToDecimal(age);
-                cmbCourse.SelectedItem = course;
+                    // Populate fields with selected row's data for editing
+                    txtStudentID.Text = selectedStudentID;
+                    txtName.Text = name;
+                    numAge.Value = Convert.ToDecimal(age);
+                    cmbCourse.SelectedItem = course;
 
-                // After editing, save the updated data back to the file
-                var updatedStudentRecord = $"{studentID},{txtName.Text},{numAge.Value},{cmbCourse.SelectedItem}";
-                UpdateStudentRecord(studentID, updatedStudentRecord);
-
-                // Reload the data to reflect the updated student
-                LoadStudentRecords();
+                    // Set the flag to indicate editing mode
+                    isEditing = true;
+                    btnEditStudent.Text = "Save Changes"; // Change button text to indicate saving
+                }
+                else
+                {
+                    MessageBox.Show("Please select one student to edit.");
+                }
             }
             else
             {
-                MessageBox.Show("Please select one student to edit.");
+                // Second click - save changes
+                string updatedStudentRecord = $"{selectedStudentID},{txtName.Text},{numAge.Value},{cmbCourse.SelectedItem}";
+                UpdateStudentRecord(selectedStudentID, updatedStudentRecord);
+
+                // Reset editing mode and button text
+                isEditing = false;
+                btnEditStudent.Text = "Edit Student";
+
+                // Clear fields and reload data to reflect the changes
+                ClearFormFields();
+                LoadStudentRecords();
             }
         }
 
         private void UpdateStudentRecord(string studentID, string updatedRecord)
         {
-            var allStudentLines = File.ReadAllLines("students.txt");
-            var updatedLines = allStudentLines.Select(line =>
-                line.StartsWith(studentID) ? updatedRecord : line).ToArray();
-            File.WriteAllLines("students.txt", updatedLines);
+            // Read all lines from the file
+            var allStudentLines = File.ReadAllLines("students.txt").ToList();
+
+            // Update the selected student's record in the list
+            for (int i = 0; i < allStudentLines.Count; i++)
+            {
+                if (allStudentLines[i].StartsWith(studentID + ","))
+                {
+                    allStudentLines[i] = updatedRecord;
+                    break;
+                }
+            }
+
+            // Write the updated list back to the file
+            File.WriteAllLines("students.txt", allStudentLines);
 
             MessageBox.Show("Student updated successfully!");
         }
@@ -166,8 +194,8 @@ namespace StudentManagement
         {
             if (File.Exists("students.txt"))
             {
-                var studentRecords = File.ReadAllLines("students.txt");
-                int totalStudents = studentRecords.Length;
+                var studentRecords = File.ReadAllLines("students.txt").Skip(1); // Skip header if present
+                int totalStudents = studentRecords.Count();
                 double averageAge = studentRecords
                     .Select(record => Convert.ToInt32(record.Split(',')[2]))
                     .Average();
