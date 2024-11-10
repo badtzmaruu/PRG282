@@ -3,11 +3,10 @@
     Keenan Lombard 578278
     Xander Minnie 600949*/
 namespace StudentManagement
-{
+    {
     partial class StudentManagement
     {
         private System.ComponentModel.IContainer components = null;
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -18,7 +17,6 @@ namespace StudentManagement
         }
 
         #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
             panel1 = new Panel();
@@ -31,7 +29,7 @@ namespace StudentManagement
             label3 = new Label();
             txtName = new TextBox();
             txtStudentID = new TextBox();
-            panel3 = new Panel();
+           panel3 = new Panel();
             label1 = new Label();
             label2 = new Label();
             dataGridView1 = new DataGridView();
@@ -40,7 +38,7 @@ namespace StudentManagement
             button1 = new Button();
             panel2 = new Panel();
             label5 = new Label();
-            panel4 = new Panel();
+           panel4 = new Panel();
             label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
@@ -55,8 +53,7 @@ namespace StudentManagement
             panel1.BackColor = SystemColors.ControlDarkDark;
             panel1.Controls.Add(label6);
             panel1.Controls.Add(btnSummaryReport);
-            panel1.Controls.Add(btnAddStudent);
-            panel1.Controls.Add(cmbCourse);
+            panel1.Controls.Add(btnAddStudent);            panel1.Controls.Add(cmbCourse);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(numAge);
             panel1.Controls.Add(label3);

@@ -20,7 +20,7 @@ namespace StudentManagementSystem
                 {
                     "1,John Smith,20,BIT", // Represents a student record with basic details.
                     "2,Alice Mabuza,22,BIT", // Each record is separated by commas for easy parsing.
-                    "3,Thabo Nkosi,19,BIT", // Contains ID, Name, Age, and Course.
+                       "3,Thabo Nkosi,19,BIT", // Contains ID, Name, Age, and Course.
                     "4,Ntombi Zulu,21,BIT", // Incorrect format in any of these records would cause parse issues later.
 
                     // Multiple student entries to populate initial data for testing or first-time use.
@@ -31,10 +31,10 @@ namespace StudentManagementSystem
                     "9,Bongani Molefe,21,BIT",
                     "10,Andile Mkhize,22,BIT",
 
-                    // Ensuring unique ID and consistent formatting for data reliability.
+                     // Ensuring unique ID and consistent formatting for data reliability.
                     "11,Thandiwe Ntuli,23,BIT",
                     "12,Sizwe Nxumalo,24,BIT",
-                    "13,Mandla Sithole,19,BIT",
+                       "13,Mandla Sithole,19,BIT",
                     "14,Nomusa Ngcobo,20,BIT",
                     "15,Kagiso Masango,21,BIT",
                     "16,Phumzile Mthembu,22,BIT",

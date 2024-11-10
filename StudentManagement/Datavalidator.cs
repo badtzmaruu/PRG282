@@ -16,7 +16,7 @@ namespace StudentManagementSystem
             // Checks if any of the input fields are empty or contain only whitespace.
             // Also checks if the 'age' field is a valid integer using TryParse.
             if (string.IsNullOrWhiteSpace(studentID) ||
-                string.IsNullOrWhiteSpace(name) || // Ensures the 'name' field is not empty or whitespace.
+                 string.IsNullOrWhiteSpace(name) || // Ensures the 'name' field is not empty or whitespace.
                 !int.TryParse(age, out _) || // Validates if 'age' can be parsed as an integer value.
                 string.IsNullOrWhiteSpace(course)) // Checks if the 'course' field is provided.
             {

@@ -11,7 +11,7 @@ namespace StudentManagementSystem
 {
     public partial class ViewStudentsForm : Form
     {
-        // Constructor for the ViewStudentsForm class that initializes the form components.
+      // Constructor for the ViewStudentsForm class that initializes the form components.
         public ViewStudentsForm()
         {
             InitializeComponent(); // Initialize the componants needed for this form.
@@ -24,10 +24,10 @@ namespace StudentManagementSystem
             dataGridViewStudents.Rows.Clear(); // Clears existing rows to refresh data with updated entires.
 
             // Checks if the file containing student data exists.
-            if (File.Exists("students.txt"))
+             if (File.Exists("students.txt"))
             {
                 var studentRecords = File.ReadAllLines("students.txt"); // Reads all lines from the student file.
-
+    
                 // Iterates over each record in the file and splits it by commas to extract student detailes.
                 foreach (var record in studentRecords)
                 {
@@ -41,26 +41,23 @@ namespace StudentManagementSystem
                     }
                 }
             }
-            else // If the file doesn't exist, display an alert to the user.
+            else 
             {
-                MessageBox.Show("No student records found."); // Notify user that no records were found in the file.
+                MessageBox.Show("No student records found."); 
             }
         }
-
-        // Event handler for the 'Refresh' button click that reloads the student data.
+        
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            DisplayStudents(); // Refreshes the display of students by re-calling the DisplayStudents method.
+            DisplayStudents(); 
         }
-
-        // Event handler for the 'Delete' button click that removes selected student records.
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Checks if any row in the DataGridView is selected before attempting to delete.
+            
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {
-                // Confirmation dialog to ensure the user wants to procedd with deletion.
-                var confirmation = MessageBox.Show("Are you sure you want to delete the selected student(s)?",
+               
+                 var confirmation = MessageBox.Show("Are you sure you want to delete the selected student(s)?",
                                                    "Delete Confirmation",
                                                    MessageBoxButtons.YesNo); // Confirmation dialog with Yes/No options.
 
@@ -72,7 +69,7 @@ namespace StudentManagementSystem
                     {
                         // Gets the student ID from the first cell of the selected row.
                         var studentId = row.Cells[0].Value.ToString();
-
+    
                         RemoveStudent(studentId); // Calls the method to remove the student from the file.
                     }
 
@@ -81,7 +78,7 @@ namespace StudentManagementSystem
                     MessageBox.Show("Student(s) deleted succesfully!"); // Notify user of successful deletion.
                 }
             }
-            else // If no student is selected, show an alert.
+                else // If no student is selected, show an alert.
             {
                 MessageBox.Show("Please select a student to delete."); // Notify user to select a student before deletion.
             }
@@ -89,13 +86,13 @@ namespace StudentManagementSystem
 
         // Method to remove a student from the file based on their student ID.
         private void RemoveStudent(string studentId)
-        {
+            {
             var allStudentLines = File.ReadAllLines("students.txt"); // Reads all lines from the student file.
 
             // Filters out the line that starts with the provided student ID to remove that specific record.
             var remainingLines = allStudentLines.Where(line => !line.StartsWith(studentId)).ToArray();
 
-            // Writes the updated list back to the student file.
+             // Writes the updated list back to the student file.
             File.WriteAllLines("students.txt", remainingLines); // Overwrites file without a backup, use cautiously.
         }
     }
