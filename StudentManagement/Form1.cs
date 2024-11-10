@@ -1,91 +1,182 @@
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Windows.Forms;
+using StudentManagementSystem;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
-    namespace StudentManagement
+namespace StudentManagement
+{
+    public partial class StudentManagement : Form
     {
-        public partial class StudentManagement : Form
-        {
-            private List<Student> studentsList = new List<Student>();
+        private List<Student> studentsList = new List<Student>();
 
-            public StudentManagement()
+        public StudentManagement()
+        {
+            InitializeComponent();
+        }
+
+        private void StudentManagement_Load(object sender, EventArgs e)
+        {
+            // Load the student records into the DataGridView on form load
+            LoadStudentRecords();
+        }
+
+        private void LoadStudentRecords()
+        {
+            if (File.Exists("students.txt"))
             {
-                InitializeComponent();
+                // Define the columns if they aren't already defined in the designer
+                if (dataGridView1.Columns.Count == 0)
+                {
+                    dataGridView1.Columns.Add("StudentID", "Student ID");
+                    dataGridView1.Columns.Add("Name", "Name");
+                    dataGridView1.Columns.Add("Age", "Age");
+                    dataGridView1.Columns.Add("Course", "Course");
+                }
+
+                var studentRecords = File.ReadAllLines("students.txt");
+
+                // Iterate over the lines and add them to the DataGridView
+                foreach (var record in studentRecords)
+                {
+                    var studentData = record.Split(',');
+                    if (studentData.Length == 4)
+                    {
+                        // Add rows to the DataGridView
+                        dataGridView1.Rows.Add(studentData[0], studentData[1], studentData[2], studentData[3]);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No student records found.");
+            }
+        }
+
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            string studentID = txtStudentID.Text.Trim();
+            string name = txtName.Text.Trim();
+            string age = numAge.Value.ToString();
+            string course = cmbCourse.SelectedItem?.ToString(); // Handle null if no course is selected
+
+            string validationMessage;
+            if (!DataValidator.ValidateInput(studentID, name, age, course, out validationMessage))
+            {
+                MessageBox.Show(validationMessage);
+                return;
             }
 
-            private void btnAddStudent_Click(object sender, EventArgs e)
+            string newStudentRecord = $"{studentID},{name},{age},{course}";
+
+            // Define the file path
+            string filePath = Path.Combine(Application.StartupPath, "students.txt");
+
+            // Check if the file exists, if not, create it
+            if (!File.Exists(filePath))
             {
-                string studentID = txtStudentID.Text;
-                string name = txtName.Text;
-                int age = (int)numAge.Value;
-                string course = cmbCourse.SelectedItem?.ToString() ?? "null";
-
-                // Basic Validation
-                if (course == "null")
-                {
-                    MessageBox.Show("Please select an available course!");
-                    return;
-                }
-                else if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(studentID))
-                {
-                    MessageBox.Show("Please fill out all the fields!");
-                    return;
-                }
-
-                // Create Student Object
-                Student student = new Student(studentID, name, age, course);
-                studentsList.Add(student);
-
-                // Write to text file
+                // Create the file and write a header or leave it empty if you want
                 try
                 {
-                    File.AppendAllText("students.txt", $"{studentID},{name},{age},{course}\n");
-                    MessageBox.Show("Student added successfully!");
+                    // Ensure the directory exists
+                    string directoryPath = Path.GetDirectoryName(filePath);
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath); // Create directory if it doesn't exist
+                    }
+
+                    // Create the file and write headers
+                    File.WriteAllText(filePath, "StudentID,Name,Age,Course\n");
+                    MessageBox.Show($"File created successfully at: {filePath}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show($"Error creating file: {ex.Message}");
+                    return;
                 }
             }
 
-            private void StudentManagement_Load(object sender, EventArgs e)
+            // Append the new student record to the file
+            try
             {
-                // Page Load Function
+                File.AppendAllLines(filePath, new[] { newStudentRecord });
+                MessageBox.Show($"Student added successfully!\nFile path: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error appending to file: {ex.Message}");
             }
 
-            private void btnEditStudent_Click(object sender, EventArgs e)
-            {
-                string studentID = txtStudentID.Text;
+            ClearFormFields();
 
-                // Find student by ID
-                var student = studentsList.FirstOrDefault(s => s.StudentID == studentID);
-                if (student != null)
-                {
-                    // Update student information
-                    student.Name = txtName.Text;
-                    student.Age = (int)numAge.Value;
-                    student.Course = cmbCourse.SelectedItem?.ToString() ?? "null";
-                    MessageBox.Show("Student information updated successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("Student not found.");
-                }
+            // Reload the data to display the newly added student
+            LoadStudentRecords();
+        }
+
+        private void ClearFormFields()
+        {
+            txtStudentID.Clear();
+            txtName.Clear();
+            numAge.Value = 18;
+            cmbCourse.SelectedIndex = -1;
+        }
+
+        private void btnEditStudent_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                string studentID = selectedRow.Cells[0].Value.ToString();
+                string name = selectedRow.Cells[1].Value.ToString();
+                string age = selectedRow.Cells[2].Value.ToString();
+                string course = selectedRow.Cells[3].Value.ToString();
+
+                // Open an edit form or enable input fields for editing
+                txtStudentID.Text = studentID;
+                txtName.Text = name;
+                numAge.Value = Convert.ToDecimal(age);
+                cmbCourse.SelectedItem = course;
+
+                // After editing, save the updated data back to the file
+                var updatedStudentRecord = $"{studentID},{txtName.Text},{numAge.Value},{cmbCourse.SelectedItem}";
+                UpdateStudentRecord(studentID, updatedStudentRecord);
+
+                // Reload the data to reflect the updated student
+                LoadStudentRecords();
             }
-
-            private void btnSummaryReport_Click(object sender, EventArgs e)
+            else
             {
-                // Generate summary report
-                int totalStudents = studentsList.Count;
-                double averageAge = studentsList.Any() ? studentsList.Average(s => s.Age) : 0;
+                MessageBox.Show("Please select one student to edit.");
+            }
+        }
 
-                string summary = $"Total Students: {totalStudents}\nAverage Age: {averageAge:F2}";
-                MessageBox.Show(summary);
+        private void UpdateStudentRecord(string studentID, string updatedRecord)
+        {
+            var allStudentLines = File.ReadAllLines("students.txt");
+            var updatedLines = allStudentLines.Select(line =>
+                line.StartsWith(studentID) ? updatedRecord : line).ToArray();
+            File.WriteAllLines("students.txt", updatedLines);
 
-                // Write summary to file
-                File.WriteAllText("summary.txt", summary);
+            MessageBox.Show("Student updated successfully!");
+        }
+
+        private void btnSummaryReport_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("students.txt"))
+            {
+                var studentRecords = File.ReadAllLines("students.txt");
+                int totalStudents = studentRecords.Length;
+                double averageAge = studentRecords
+                    .Select(record => Convert.ToInt32(record.Split(',')[2]))
+                    .Average();
+
+                MessageBox.Show($"Total Students: {totalStudents}\nAverage Age: {averageAge:F2}");
+            }
+            else
+            {
+                MessageBox.Show("No student records found.");
             }
         }
 
@@ -105,3 +196,4 @@
             }
         }
     }
+}

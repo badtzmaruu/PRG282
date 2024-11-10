@@ -44,7 +44,7 @@ namespace StudentManagementSystem
         {
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {
-                var confirmation = MessageBox.Show("Are you sure you want to delete the selected student(s)?", 
+                var confirmation = MessageBox.Show("Are you sure you want to delete the selected student(s)?",
                                                    "Delete Confirmation",
                                                    MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
@@ -71,4 +71,5 @@ namespace StudentManagementSystem
             File.WriteAllLines("students.txt", remainingLines);
         }
     }
+
 }
