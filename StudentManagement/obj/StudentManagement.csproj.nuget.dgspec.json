@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\keena\\Desktop\\SM\\PRG282\\StudentManagement\\StudentManagement.csproj": {}
+    "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\keena\\Desktop\\SM\\PRG282\\StudentManagement\\StudentManagement.csproj": {
+    "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keena\\Desktop\\SM\\PRG282\\StudentManagement\\StudentManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj",
         "projectName": "StudentManagement",
-        "projectPath": "C:\\Users\\keena\\Desktop\\SM\\PRG282\\StudentManagement\\StudentManagement.csproj",
-        "packagesPath": "C:\\Users\\keena\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keena\\Desktop\\SM\\PRG282\\StudentManagement\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\keena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -62,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
