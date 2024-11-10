@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonathan\\Desktop\\PRG282\\StudentManagement\\StudentManagement.csproj",
+      "projectUniqueName": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj",
       "projectName": "StudentManagement",
-      "projectPath": "C:\\Users\\Jonathan\\Desktop\\PRG282\\StudentManagement\\StudentManagement.csproj",
+      "projectPath": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\StudentManagement.csproj",
       "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonathan\\Desktop\\PRG282\\StudentManagement\\obj\\",
+      "outputPath": "C:\\Users\\Jonathan\\Desktop\\GitHub\\PRG282\\StudentManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
