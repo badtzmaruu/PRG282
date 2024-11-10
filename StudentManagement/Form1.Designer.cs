@@ -1,4 +1,8 @@
-﻿namespace StudentManagement
+﻿/*  Jonathan Joubert 578085
+    Zirong Luo 600287
+    Keenan Lombard 578278
+    Xander Minnie 600949*/
+namespace StudentManagement
 {
     partial class StudentManagement
     {
@@ -18,6 +22,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label6 = new Label();
             btnSummaryReport = new Button();
             btnAddStudent = new Button();
             cmbCourse = new ComboBox();
@@ -26,6 +31,9 @@
             label3 = new Label();
             txtName = new TextBox();
             txtStudentID = new TextBox();
+            panel3 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
             dataGridView1 = new DataGridView();
             btnEditStudent = new Button();
             button3 = new Button();
@@ -34,16 +42,12 @@
             label5 = new Label();
             panel4 = new Panel();
             label7 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            panel3 = new Panel();
-            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -63,6 +67,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(352, 569);
             panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.MenuHighlight;
+            label6.Location = new Point(22, 13);
+            label6.Name = "label6";
+            label6.Size = new Size(247, 45);
+            label6.TabIndex = 2;
+            label6.Text = "Student Details";
             // 
             // btnSummaryReport
             // 
@@ -91,7 +106,7 @@
             // cmbCourse
             // 
             cmbCourse.FormattingEnabled = true;
-            cmbCourse.Items.AddRange(new object[] { "Course1", "Course2", "Course3", "Course4" });
+            cmbCourse.Items.AddRange(new object[] { "BIT", "DIT", "BComp", "DIT (Deaf Students)", "CIT (DB Dev)", "CIT (SW Dev)", "BIT (Part Time)" });
             cmbCourse.Location = new Point(22, 274);
             cmbCourse.Name = "cmbCourse";
             cmbCourse.Size = new Size(307, 23);
@@ -143,6 +158,37 @@
             txtStudentID.Size = new Size(307, 23);
             txtStudentID.TabIndex = 4;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(label2);
+            panel3.Location = new Point(3, 74);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 100);
+            panel3.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(19, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 3;
+            label1.Text = "StudentID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(19, 66);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Name";
+            // 
             // dataGridView1
             // 
             dataGridView1.Location = new Point(17, 16);
@@ -172,7 +218,7 @@
             button3.TabIndex = 5;
             button3.Text = "Prev";
             button3.UseVisualStyleBackColor = true;
-        //    button3.Click += button3_Click;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -184,6 +230,7 @@
             button1.TabIndex = 8;
             button1.Text = "Next";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel2
             // 
@@ -226,48 +273,6 @@
             label7.TabIndex = 1;
             label7.Text = "Student Management System";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(19, 66);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 20);
-            label2.TabIndex = 5;
-            label2.Text = "Name";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(19, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 3;
-            label1.Text = "StudentID";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(label2);
-            panel3.Location = new Point(3, 74);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 100);
-            panel3.TabIndex = 13;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.MenuHighlight;
-            label6.Location = new Point(22, 13);
-            label6.Name = "label6";
-            label6.Size = new Size(247, 45);
-            label6.TabIndex = 2;
-            label6.Text = "Student Details";
-            // 
             // StudentManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -284,12 +289,12 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
